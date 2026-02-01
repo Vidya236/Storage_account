@@ -23,3 +23,11 @@ variable "account_replication_type" {
   type        = string
   default     = "LRS"
 }
+variable "storage_names" {
+  type = map(string)
+  default = {
+    dev   = "vidyadevstore2026v1"
+    stage = "vidyastagestore2026v1"
+  }
+}
+
