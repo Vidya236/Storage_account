@@ -8,11 +8,6 @@ variable "location" {
   default     = "South India"
 }
 
-variable "storage_account_name" {
-  type        = string
-  description = "Globally unique name for the Storage Account"
-}
-
 variable "account_tier" {
   type        = string
   default     = "Standard"
@@ -29,6 +24,7 @@ variable "storage_names" {
     stage = "vidyastagestore2026v1"
   }
 }
+
 
 
 
