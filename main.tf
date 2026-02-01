@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "example" {
 
 # Fixed Storage Account (Updated deprecated property)
 resource "azurerm_storage_account" "example" {
-  name                      = var.storage_account_names[terraform.workspace]
+  name                      = var.storage_names[terraform.workspace]
   resource_group_name       = azurerm_resource_group.example.name
   location                  = azurerm_resource_group.example.location
   account_tier              = var.account_tier
@@ -44,4 +44,5 @@ output "client_secret" {
   value     = azuread_application_password.example.value
   sensitive = true
 }
+
 
