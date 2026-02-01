@@ -6,7 +6,7 @@ variable "resource_group_name" {
 variable "location" {
   type        = string
   description = "Azure region"
-  default     = "East US"
+  default     = "South India"
 }
 
 variable "storage_account_name" {
@@ -30,4 +30,5 @@ variable "storage_names" {
     stage = "vidyastagestore2026v1"
   }
 }
+
 
