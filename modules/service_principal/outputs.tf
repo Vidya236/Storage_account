@@ -16,3 +16,9 @@ output "client_secret" {
 output "application_object_id" {
   value = azuread_application.this.object_id
 }
+# Add or change this output
+output "application_id" {
+  description = "The Application ID of the Azure AD App"
+  value       = azuread_application.this.application_id
+}
+
