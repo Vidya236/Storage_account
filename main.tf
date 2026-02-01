@@ -37,10 +37,11 @@ module "service_principal" {
 resource "azuread_application_password" "example" {
   application_object_id = module.service_principal.application_id
   display_name          = "terraform-generated-secret"
-  end_date              = "17520h"
+  end_date_relative     = "17520h"
 }
 
 output "client_secret" {
   value     = azuread_application_password.example.value
   sensitive = true
 }
+
