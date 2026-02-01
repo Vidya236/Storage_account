@@ -20,7 +20,7 @@ terraform init
 # Create the workspaces
 terraform workspace new dev
 terraform workspace new stage
-
+# Setting workspace to dev
 terraform workspace select dev
 # Importing resource group
 terraform import azurerm_resource_group.example /subscriptions/0a8b2482-9db4-4697-a9fe-fd7221606864/resourceGroups/shared-app-rg
@@ -30,7 +30,7 @@ terraform import azurerm_storage_account.example /subscriptions/0a8b2482-9db4-46
 terraform import azurerm_storage_container.data https://vidyadevstore2026v1.blob.core.windows.net/data-container
 
 terraform apply -auto-approve
-
+# Setting workspace to stage
 terraform workspace select stage
 # Importing resource group
 terraform import azurerm_resource_group.example /subscriptions/0a8b2482-9db4-4697-a9fe-fd7221606864/resourceGroups/shared-app-rg
