@@ -1,8 +1,7 @@
 variable "resource_group_name" {
-  type        = string
-  description = "Name of the existing/new Resource Group"
+  type    = string
+  default = "shared-app-rg" # This stops the RG prompt
 }
-
 variable "location" {
   type        = string
   description = "Azure region"
@@ -30,5 +29,6 @@ variable "storage_names" {
     stage = "vidyastagestore2026v1"
   }
 }
+
 
 
