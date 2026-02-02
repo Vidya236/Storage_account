@@ -20,24 +20,14 @@ terraform init
 # Create the workspaces
 terraform workspace new dev
 terraform workspace new stage
+# Switch initialization to Dev backend
+terraform init -backend-config=dev.tfbackend -reconfigure
 # Setting workspace to dev
 terraform workspace select dev
-# Importing resource group
-terraform import azurerm_resource_group.example /subscriptions/0a8b2482-9db4-4697-a9fe-fd7221606864/resourceGroups/shared-app-rg
-# Importing storage account
-terraform import azurerm_storage_account.example /subscriptions/0a8b2482-9db4-4697-a9fe-fd7221606864/resourceGroups/shared-app-rg/providers/Microsoft.Storage/storageAccounts/vidyadevstore2026v1
-# Importing storage container
-terraform import azurerm_storage_container.data https://vidyadevstore2026v1.blob.core.windows.net/data-container
+# Switch initialization to Stage backend
+terraform init -backend-config=stage.tfbackend -reconfigure
 
-terraform apply -auto-approve
-# Setting workspace to stage
-terraform workspace select stage
-# Importing resource group
-terraform import azurerm_resource_group.example /subscriptions/0a8b2482-9db4-4697-a9fe-fd7221606864/resourceGroups/shared-app-rg
-# Importing storage account
-terraform import azurerm_storage_account.example /subscriptions/0a8b2482-9db4-4697-a9fe-fd7221606864/resourceGroups/shared-app-rg/providers/Microsoft.Storage/storageAccounts/vidyastagestore2026v1
-# Importing storage container
-terraform import azurerm_storage_container.data https://vidyastagestore2026v1.blob.core.windows.net/data-container
+terraform import azurerm_resource_group.example /subscriptions/$SUB_ID/resourceGroups/shared-app-rg
 terraform apply -auto-approve
 
 To see Dev credentials: terraform workspace select dev && terraform output
