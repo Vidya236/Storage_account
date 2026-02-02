@@ -16,7 +16,10 @@ git clone https://github.com/Vidya236/Storage_account.git
 cd Storage_account
 
 terraform init
-
+# Run the Remote Backend
+chmod +x setup_backend.sh
+sed -i 's/\r$//' setup_backend.sh
+./setup_backend.sh
 # Create the workspaces
 terraform workspace new dev
 terraform workspace new stage
