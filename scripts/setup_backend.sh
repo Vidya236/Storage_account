@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 RESOURCE_GROUP_NAME="terraform-state-rg"
 STAGE_SA_ACCOUNT="tfstageback2026vallika"
@@ -16,3 +16,4 @@ az storage account create --resource-group $RESOURCE_GROUP_NAME --name $DEV_SA_A
 # Create blob containers
 az storage container create --name $CONTAINER_NAME --account-name $STAGE_SA_ACCOUNT
 az storage container create --name $CONTAINER_NAME --account-name $DEV_SA_ACCOUNT
+
